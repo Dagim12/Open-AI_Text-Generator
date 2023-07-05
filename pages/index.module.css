@@ -1,0 +1,68 @@
+
+.container {
+    background: #E0E0E0;
+    text-align: center;
+    font-family: Poppins;
+    font-style: normal;
+    line-height: normal;
+}
+.header {
+    width: 897px;
+    height: 0px;
+    margin-top: 80px;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;    
+}
+.header_box {
+    width: 298px; 
+    height: 52px; 
+    position: relative
+}
+.header_logo {
+    width: 52px; 
+    height: 52px; 
+    left: 0px; 
+    top: 0px; 
+    position: absolute; 
+    background: #FF007A
+}
+.header_text_black{
+    left: 71px; 
+    top: 22px; 
+    position: absolute; 
+    text-align: center; 
+    color: black; 
+    font-size: 18px; 
+    font-family: Poppins; 
+    font-weight: 600; 
+    word-wrap: break-word
+}
+.header_text_red {
+    color: #FF007A; 
+}
+.header_box_border {
+    border: 0.50px #E0E0E0 solid;
+}
+
+.dis_logo {
+    width: 52px;
+    height: 52px;
+    background-image: url('data:image/svg+xml,<svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="52" height="52" fill="%231E1E1E"/><g id="Chat Web App UI Kit" clip-path="url(%23clip0_0_1)"><rect width="897" height="1024" transform="translate(-18 -13)" fill="white"/></g><g id="Group 35"><path id="Subtract" fill-rule="evenodd" clip-rule="evenodd" d="M12.4583 3.8005C4.9866 8.368 0 16.6017 0 26C0 35.3983 4.9866 43.632 12.4583 48.1995V3.8005ZM19.0667 51.0653C21.274 51.6745 23.599 52 26 52C40.3594 52 52 40.3594 52 26C52 11.6406 40.3594 0 26 0C23.599 0 21.274 0.32546 19.0667 0.93467V51.0653Z" fill="%23FF007A"/></g><defs><clipPath id="clip0_0_1"><rect width="897" height="1024" fill="white" transform="translate(-18 -13)"/></clipPath></defs></svg>');
+}
+.logout_img {
+    width: 24px;
+    height: 24px;
+    background-image: url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="right-from-bracket-solid 1"><path id="Vector" d="M17.7141 4.96406L23.4703 10.7203C23.8078 11.0578 24 11.5219 24 12C24 12.4781 23.8078 12.9422 23.4703 13.2797L17.7141 19.0359C17.4141 19.3359 17.0109 19.5 16.5891 19.5C15.7125 19.5 15 18.7875 15 17.9109V15H9C8.17031 15 7.5 14.3297 7.5 13.5V10.5C7.5 9.67031 8.17031 9 9 9H15V6.08906C15 5.2125 15.7125 4.5 16.5891 4.5C17.0109 4.5 17.4141 4.66875 17.7141 4.96406ZM7.5 4.5H4.5C3.67031 4.5 3 5.17031 3 6V18C3 18.8297 3.67031 19.5 4.5 19.5H7.5C8.32969 19.5 9 20.1703 9 21C9 21.8297 8.32969 22.5 7.5 22.5H4.5C2.01562 22.5 0 20.4844 0 18V6C0 3.51562 2.01562 1.5 4.5 1.5H7.5C8.32969 1.5 9 2.17031 9 3C9 3.82969 8.32969 4.5 7.5 4.5Z" fill="%23FF007A"/></g></svg>');
+}
+.ET_img {
+    width: 40px;
+    height: 40px;
+    background-image: url('data:image/svg+xml,<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="40" height="40" rx="10" fill="%23FF007A"/><path d="M11.0114 26V14.3636H18.8523V16.392H13.4716V19.1648H18.4489V21.1932H13.4716V23.9716H18.875V26H11.0114ZM20.3651 16.392V14.3636H29.9219V16.392H26.3594V26H23.9276V16.392H20.3651Z" fill="white"/></svg>');
+}
+.AI_img {
+    width: 40px;
+    height: 40px;
+    background-image: url('data:image/svg+xml,<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="40" height="40" rx="10" fill="%23FF007A"/><path d="M14.017 26H11.3807L15.3977 14.3636H18.5682L22.5795 26H19.9432L17.0284 17.0227H16.9375L14.017 26ZM13.8523 21.4261H20.0795V23.3466H13.8523V21.4261ZM26.4403 14.3636V26H23.9801V14.3636H26.4403Z" fill="white"/></svg>');
+}
