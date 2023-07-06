@@ -90,7 +90,7 @@ const Home = () => {
   };
   return (
     <div className={clsx("w-full bg-white", text_font.className)}>
-      <div className='grid grid-rows-2 fixed mb-16'>
+      <div className='grid grid-rows-2 mb-16'>
         <div className='w-full h-[80px] border mb-[43px]'>
           <div className='h-[52px] relative ml-6 mt-4 mb-4'>
             <div className='float-left'>
