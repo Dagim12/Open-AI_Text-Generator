@@ -1,5 +1,6 @@
 import { Configuration, OpenAIApi } from "openai";
 
+// api key on .env
 const configuration = new Configuration({
   apiKey: process.env.OPEN_AI_KEY,
 });
@@ -7,6 +8,7 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 
 export default async function (req, res) {
+  // error handling for the user response needs to improve
   if (!configuration.apiKey) {
     res.status(500).json({
       error: {
@@ -18,6 +20,7 @@ export default async function (req, res) {
     );
     return;
   }
+  // read request text
   const text = req.body.text || "";
   if (text.trim().length === 0) {
     res.status(400).json({
@@ -28,12 +31,15 @@ export default async function (req, res) {
     return;
   }
 
+  //create the open AI request
   try {
     const completion = await openai.createCompletion({
       model: "text-davinci-003",
       prompt: text,
-      temperature: 0.6,
+      temperature: 0.4,
+      max_tokens: 200,
     });
+    console.log("Result is: " + completion.data);
     res.status(200).json({ result: completion.data.choices[0].text });
   } catch (error) {
     // new exception handling to be done
