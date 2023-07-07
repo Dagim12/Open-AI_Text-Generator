@@ -36,10 +36,10 @@ export default async function (req, res) {
   try {
     const completion = await openai.createCompletion({
       model: "text-davinci-003",
-      prompt: generatePrompt(text),
-      temperature: 0.9,
+      prompt: generatePrompt2(text),
+      temperature: 0.1,
       top_p: 0.8,
-      max_tokens: 150,
+      max_tokens: 100,
     });
     console.log("Result is: " + completion.data);
     res.status(200).json({ result: completion.data.choices[0].text });
@@ -61,6 +61,12 @@ export default async function (req, res) {
 
 function generatePrompt(input) {
   const prompt = `Chat with person. Suggest topics about stories, poetry, technical articles, dialogues of fictional characters, etc. ${
+    "\n" + input
+  }`;
+  return prompt;
+}
+function generatePrompt2(input) {
+  const prompt = `Chat with a person or answer questions on Educational topics like Physics, Chemistry, Maths, Biology, etc. No Politics. ${
     "\n" + input
   }`;
   return prompt;

@@ -14,6 +14,7 @@ export const text_font = Poppins({
 const Home = () => {
   const [userInput, setUserInput] = useState("");
   const [isTyping, setIsTyping] = useState(false);
+  const [temp, setTemp] = useState(0.5);
   const [messages, setMessages] = useState([]);
   const [showError, setShowError] = useState(false);
   const [errorMessage, setErrorMessages] = useState("");
@@ -21,7 +22,7 @@ const Home = () => {
   // on entering the text for chat
   async function onSubmit(event) {
     event.preventDefault();
-
+    debugger;
     //show the typing animation
     setIsTyping(true);
     let prompt = "";
@@ -45,6 +46,7 @@ const Home = () => {
     } else {
       return;
     }
+    console.log("Temp is" + temp);
     try {
       //send to generate api
       const response = await fetch("/api/generate", {
@@ -52,7 +54,7 @@ const Home = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ text: prompt }),
+        body: JSON.stringify({ text: prompt, tem: temp }),
       });
 
       const data = await response.json();
@@ -119,7 +121,7 @@ const Home = () => {
   };
 
   function uppercaseFirstLetter(text) {
-    return text[0].toUpperCase() + text.slice(1).toLowerCase();
+    return text[0].toUpperCase() + text.slice(1);
   }
 
   return (
@@ -163,6 +165,18 @@ const Home = () => {
         {isTyping && <Typing />}
       </div>
       <div className='inset-x-0 row-start-1 fixed bottom-0 mt-4 bg-white'>
+        <div className='flex justify-center'>
+          <input
+            id='small-range'
+            title='Adjust Temprature'
+            type='range'
+            min='0'
+            max='0.9'
+            value={temp}
+            onChange={(e) => setTemp(e.target.value)}
+            class='w-36 h-1 mb-6 bg-gray-200 rounded-lg appearance-none cursor-pointer range-sm dark:bg-gray-700'
+          ></input>
+        </div>
         <div className='ml-6 mb-6 mr-6 h-[50px] '>
           <form className='' onSubmit={onSubmit}>
             <div className='relative'>
