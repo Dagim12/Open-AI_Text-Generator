@@ -71,3 +71,50 @@
     height: 24px;
     background-image: url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="Iconsax"><path id="Vector" d="M16.14 2.95998L7.11 5.95998C1.04 7.98998 1.04 11.3 7.11 13.32L9.79 14.21L10.68 16.89C12.7 22.96 16.02 22.96 18.04 16.89L21.05 7.86998C22.39 3.81998 20.19 1.60998 16.14 2.95998ZM16.46 8.33998L12.66 12.16C12.51 12.31 12.32 12.38 12.13 12.38C11.94 12.38 11.75 12.31 11.6 12.16C11.4605 12.0188 11.3823 11.8284 11.3823 11.63C11.3823 11.4316 11.4605 11.2411 11.6 11.1L15.4 7.27998C15.69 6.98998 16.17 6.98998 16.46 7.27998C16.75 7.56998 16.75 8.04998 16.46 8.33998Z" fill="%23FF007A"/></g></svg>');
 }
+
+/* Typing animation */
+
+.typing {
+    width: 5em;
+    height: 2em;
+    position: relative;
+    padding: 10px;
+    margin-left: 5px;
+    background: #e6e6e6;
+    border-radius: 20px;
+  }
+  
+  .typing__dot {
+    float: left;
+    width: 8px;
+    height: 8px;
+    margin: 0 4px;
+    background: #8d8c91;
+    border-radius: 50%;
+    opacity: 0;
+    animation: loadingFade 1s infinite;
+  }
+  
+  .typing__dot:nth-child(1) {
+    animation-delay: 0s;
+  }
+  
+  .typing__dot:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  
+  .typing__dot:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  
+  @keyframes loadingFade {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.8;
+    }
+    100% {
+      opacity: 0;
+    }
+  }

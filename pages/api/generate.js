@@ -20,6 +20,7 @@ export default async function (req, res) {
     );
     return;
   }
+  debugger;
   // read request text
   const text = req.body.text || "";
   if (text.trim().length === 0) {
@@ -30,14 +31,15 @@ export default async function (req, res) {
     });
     return;
   }
-
+  debugger;
   //create the open AI request
   try {
     const completion = await openai.createCompletion({
       model: "text-davinci-003",
-      prompt: text,
-      temperature: 0.4,
-      max_tokens: 200,
+      prompt: generatePrompt(text),
+      temperature: 0.9,
+      top_p: 0.8,
+      max_tokens: 150,
     });
     console.log("Result is: " + completion.data);
     res.status(200).json({ result: completion.data.choices[0].text });
@@ -55,4 +57,11 @@ export default async function (req, res) {
       });
     }
   }
+}
+
+function generatePrompt(input) {
+  const prompt = `Chat with person. Suggest topics about stories, poetry, technical articles, dialogues of fictional characters, etc. ${
+    "\n" + input
+  }`;
+  return prompt;
 }
